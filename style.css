@@ -1,0 +1,128 @@
+:root {
+  --bg: #090b0c;
+  --sfc: #121517;
+  --brd: #242827;
+  --txt: #e1e3e4;
+  --acc: #c8f56a;
+  --mono: 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--txt);
+  font-family: var(--mono);
+  user-select: none;
+}
+
+#desktop {
+  height: calc(100vh - 40px);
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(36, 40, 39, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 40, 39, 0.4) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+#taskbar {
+  height: 40px;
+  background: var(--bg);
+  border-top: 1px solid var(--brd);
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#start-btn, .app-icon {
+  background: var(--sfc);
+  color: var(--txt);
+  border: 1px solid var(--brd);
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-family: inherit;
+}
+
+#start-btn {
+  background: transparent;
+  color: var(--acc);
+  border-color: var(--acc);
+  font-weight: bold;
+}
+
+#start-btn:hover {
+  background: var(--acc);
+  color: var(--bg);
+}
+
+.app-icon:hover {
+  border-color: var(--acc);
+}
+
+#clock {
+  margin-left: auto;
+  color: #80878a;
+  font-size: 0.85rem;
+}
+
+.window {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  width: 450px;
+  background: var(--sfc);
+  border: 1px solid var(--brd);
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.window-header {
+  height: 36px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--brd);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  cursor: grab;
+  color: #80878a;
+  font-size: 0.85rem;
+}
+
+.window-header:active {
+  cursor: grabbing;
+}
+
+.close-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: var(--brd);
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #ff5555;
+}
+
+.window-content {
+  padding: 16px;
+  line-height: 1.5;
+}
+
+.window-content h2 {
+  color: var(--acc);
+  margin-bottom: 8px;
+}
